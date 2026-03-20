@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Plateforme Universitaire</title>
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        .auth-container {
+            display: flex;
+            height: 100vh; 
+        }
+
+        .etudiant, .enseignant {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;     
+        }
+
+        .etudiant {
+            background-color: #f4e7e7; 
+        }
+
+        .enseignant {
+            background-color: #accdff;
+        }
+
+        .etudiant img, .enseignant img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="etudiant">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Étudiant">
+            <h2>Étudiant</h2>
+            <a href="routeur.php?page=login-etudiant" class="button">Connecter</a>
+        </div>
+
+        <div class="enseignant">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Enseignant">
+            <h2>Enseignant</h2>
+            <a href="routeur.php?page=login-enseignant" class="button">Connecter</a>
+        </div>
+    </div>
+</body>
+</html>

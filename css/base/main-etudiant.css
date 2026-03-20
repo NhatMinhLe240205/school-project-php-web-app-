@@ -1,0 +1,77 @@
+body,
+html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+/* Side menu */
+.side-menu {
+    width: 220px;
+    background-color: #F4E7E7;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2); /* subtle shadow on the right */
+    z-index: 1; /* ensures shadow is visible above main content */
+}
+
+.side-menu .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.side-menu .logo img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.side-menu a {
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #c9b9b9;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+}
+
+
+h1 {
+    margin-top: 0;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .side-menu {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .side-menu a {
+        flex: 1;
+        text-align: center;
+        padding: 10px 5px;
+    }
+}

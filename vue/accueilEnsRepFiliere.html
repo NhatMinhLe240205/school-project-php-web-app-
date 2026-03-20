@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Enseignant - Responsable Filière</title>
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        /* CSS Global et Layout */
+        body,
+        html {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Side menu - Style spécifique Responsable Filière */
+        .side-menu {
+            width: 220px;
+            background-color: #605555; /* Couleur sombre pour le responsable */
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .side-menu .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .side-menu .logo img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .side-menu .logo span {
+            color: white;
+            font-weight: bold;
+        }
+
+        .side-menu a {
+            text-decoration: none;
+            color: white; /* Texte blanc sur fond sombre */
+            padding: 12px 20px;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        /* Hover spécifique */
+        .side-menu a:hover {
+            background-color: #4b4242;
+        }
+
+        /* Main content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .side-menu {
+                width: 100%;
+                flex-direction: row;
+                overflow-x: auto;
+                padding-top: 0;
+            }
+
+            .side-menu .logo {
+                display: none;
+            }
+
+            .side-menu a {
+                flex: 1;
+                text-align: center;
+                padding: 15px 5px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="side-menu">
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Logo Enseignant">
+            <span>Enseignant Resp. Filière</span>
+        </div>
+        <a href="routeur.php?page=accueil-enseignant">Accueil</a>
+        <a href="routeur.php?page=profil-enseignant">Profil</a>
+        <a href="routeur.php?page=sondages-enseignant">Sondages</a>
+        <a href="routeur.php?page=etudiants-groupes">Étudiants et Groupes</a>
+        <a href="routeur.php?page=liste-enseignants">Enseignants</a>
+        <a href="routeur.php?page=deconnexion" style="margin-top: auto; color: #ff9d9d;">Déconnexion</a>
+    </div>
+
+    <div class="main-content">
+        <?php 
+            // Récupération dynamique du nom via la session PHP
+            $prenom = isset($_SESSION['user']['prenomP']) ? $_SESSION['user']['prenomP'] : 'Enseignant';
+        ?>
+        <h1>Bienvenue, <?php echo htmlspecialchars($prenom); ?> !</h1>
+        <p>Espace de gestion de filière : supervisez les inscriptions, les groupes et les résultats pédagogiques.</p>
+    </div>
+</body>
+</html>

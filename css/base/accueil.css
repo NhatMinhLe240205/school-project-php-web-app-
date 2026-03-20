@@ -1,0 +1,30 @@
+.auth-container {
+    display: flex;
+    height: 100vh; /* full viewport height */
+}
+
+.etudiant, .enseignant {
+    flex: 1; /* each takes half of the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;     /* horizontal center */
+}
+
+.etudiant {
+    background-color: #f4e7e7; 
+}
+
+.enseignant {
+    background-color: #accdff;
+}
+
+.etudiant img, .enseignant img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}

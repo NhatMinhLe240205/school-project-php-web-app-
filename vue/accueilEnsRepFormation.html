@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Page Enseignant - Tableau de bord</title>
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        /* Insertion du CSS Enseignant */
+        body,
+        html {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Menu latéral Enseignant (Gris/Bleu selon tes styles) */
+        .side-menu {
+            width: 220px;
+            background-color: #accdff; /* Couleur de base enseignant */
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Surcharge grise demandée à la fin de ton CSS */
+        .side-menu {
+            background-color: #d9d9d9;
+        }
+
+        .side-menu .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .side-menu .logo img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .side-menu .logo span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .side-menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 12px 20px;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        /* Effet de survol gris foncé */
+        .side-menu a:hover {
+            background-color: #b1afaf;
+        }
+
+        /* Contenu principal */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            max-width: 600px;
+        }
+
+        /* Adaptabilité mobile */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .side-menu {
+                width: 100%;
+                flex-direction: row;
+                overflow-x: auto;
+                padding-top: 0;
+            }
+
+            .side-menu .logo {
+                display: none;
+            }
+
+            .side-menu a {
+                flex: 1;
+                text-align: center;
+                padding: 15px 5px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="side-menu">
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Logo Enseignant">
+            <span>Enseignant Resp. Formation</span>
+        </div>
+        <a href="routeur.php?page=accueil-enseignant">Accueil</a>
+        <a href="routeur.php?page=profil-enseignant">Profil</a>
+        <a href="routeur.php?page=sondages-enseignant">Sondages</a>
+        <a href="routeur.php?page=etudiants-groupes">Étudiants et Groupes</a>
+        <a href="routeur.php?page=liste-enseignants">Enseignants</a>
+        <a href="routeur.php?page=deconnexion" style="margin-top: auto; color: #d9534f;">Déconnexion</a>
+    </div>
+
+    <div class="main-content">
+        <?php 
+            $prenom = isset($_SESSION['user']['prenomP']) ? $_SESSION['user']['prenomP'] : 'Enseignant';
+        ?>
+        <h1>Bienvenue, <?php echo htmlspecialchars($prenom); ?> !</h1>
+        <p>Voici votre tableau de bord. Vous pouvez gérer vos cours, consulter les évaluations de vos étudiants et gérer votre profil via le menu latéral.</p>
+    </div>
+
+</body>
+</html>

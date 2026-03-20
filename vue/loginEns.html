@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Enseignant - Plateforme Universitaire</title>
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        /* CSS spécifique Enseignant intégré */
+        body,
+        html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #accdff; /* Fond bleu pour l'espace enseignant */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-box img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .login-box h2 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Important pour que l'input ne dépasse pas */
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-box button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-link {
+            margin-top: 15px;
+            text-decoration: none;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Logo">
+        <h2>Plateforme IUT d'Orsay</h2>
+        
+        <form action="routeur.php?page=connexion-action" method="POST" style="width: 100%;">
+            <input type="text" name="username" placeholder="Email professionnel" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            
+            <button type="submit">Se connecter</button>
+        </form>
+
+        <a href="routeur.php?page=accueil" class="back-link">← Retour à l'accueil</a>
+    </div>
+</body>
+</html>
